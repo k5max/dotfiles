@@ -2,11 +2,9 @@
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
 
--- 行号
+-- 行号与相对行号
 vim.o.number = true
--- jkhl 移动时光标周围保留8行
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
+vim.o.relativenumber = true
 -- 高亮所在行
 vim.wo.cursorline = true
 -- 显示左侧图标指示列
