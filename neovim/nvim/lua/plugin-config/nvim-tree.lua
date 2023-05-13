@@ -1,27 +1,25 @@
+-- https://github.com/nvim-tree/nvim-tree.lua
 local status, nvim_tree = pcall(require, "nvim-tree")
 if not status then
     vim.notify("nvim-tree not found")
-  return
+    return
 end
 
--- 列表操作快捷键
--- local list_keys = require('keybindings').nvimTreeList
 nvim_tree.setup({
+    -- 排序规则
+    sort_by = "case_sensitive",
     -- 不显示 git 状态图标
     git = {
         enable = false,
     },
-    -- project plugin 需要这样设置
-    update_cwd = true,
-    update_focused_file = {
-        enable = true,
-        update_cwd = true
+    renderer = {
+        group_empty = true,
     },
-    -- 隐藏 .文件 和 node_modules 文件夹
+    -- 隐藏 .文件 
     filters = {
         dotfiles = true,
         -- 自定义隐藏文件夹
-        -- custom = { '' }
+        custom = { '^.git$' }
     },
     view = {
         -- 宽度
@@ -30,13 +28,6 @@ nvim_tree.setup({
         side = 'left',
         -- 隐藏根目录
         hide_root_folder = false,
-        -- 自定义列表中快捷键
-        --[[
-        mappings = {
-            custom_only = false,
-            list = list_keys,
-        },
-        --]]
         -- 不显示行数
         number = false,
         relativenumber = false,
@@ -52,6 +43,11 @@ nvim_tree.setup({
         },
     },
 })
+
+-- 快捷键绑定
+-- alt + m 键打开关闭tree
+vim.keymap.set("n", "<A-m>", ":NvimTreeToggle<CR>", {})
+
 -- 自动关闭
 vim.cmd([[
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif

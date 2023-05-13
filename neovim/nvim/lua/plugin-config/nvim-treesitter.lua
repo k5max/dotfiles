@@ -45,6 +45,8 @@ treesitter.setup({
     -- termcolors = { } -- table of colour name strings
   },
 })
+
+-- 快捷键绑定
 -- 开启 Folding 模块
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
