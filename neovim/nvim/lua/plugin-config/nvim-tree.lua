@@ -46,7 +46,11 @@ nvim_tree.setup({
 
 -- 快捷键绑定
 -- alt + m 键打开关闭tree
-vim.keymap.set("n", "<A-m>", ":NvimTreeToggle<CR>", {})
+local opt = {
+    noremap = true,
+    silent = true
+}
+vim.keymap.set("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
 -- 自动关闭
 vim.cmd([[

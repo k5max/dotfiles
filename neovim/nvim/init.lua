@@ -1,9 +1,9 @@
 -- basic setting
-require('basic')
+require("basic")
 -- keyboard mapping
-require('keybindings')
+require("keybindings")
 -- packer plugin manage
-require('plugins')
+require("plugins")
 -- theme setting
 require("colorscheme")
 
@@ -11,6 +11,13 @@ require("colorscheme")
 require("plugin-config.lualine")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.nvim-tree")
+require("plugin-config.bufferline")
 require("plugin-config.gitsigns")
 require("plugin-config.nvim-autopairs")
+require("plugin-config.comment")
 require("plugin-config.telescope")
+
+-- 内置LSP
+require("lsp.lsp")
+require("lsp.cmp")
+require("lsp.ui")
