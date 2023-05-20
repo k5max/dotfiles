@@ -1,3 +1,4 @@
+-- mason 和 mason-lspconfig 负责安装和管理 LSP 服务器
 local status, mason = pcall(require, "mason")
 if not status then
     vim.notify("mason not found")
@@ -9,12 +10,12 @@ if not status then
     vim.notify("mason-lspconfig not found")
     return
 end
-
 local status, lspconfig = pcall(require, "lspconfig")
 if not status then
     vim.notify("lspconfig not found")
     return
 end
+
 
 -- :h mason-default-settings
 -- ~/.local/share/nvim/mason
@@ -46,33 +47,75 @@ mason_config.setup({
     automatic_installation = true,
 })
 
--- 安装列表
+-- language server 安装列表
 -- { key: 服务器名， value: 配置文件 }
 -- key 必须为下列网址列出的 server name，不可以随便写
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
     --ccls = require("lsp.config.ccls")
-    clangd = require("lsp.config.clangd"),
+    clangd = require("lsp.config.clangd"), --lua/lsp/config/clangd.lua
     --cmake = require("lsp.config.cmake"),
-    -- lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+    lua_ls = require("lsp.config.lua"),    -- lua/lsp/config/lua.lua
     -- html = require("lsp.config.html"),
     -- cssls = require("lsp.config.css"),
     -- tsserver = require("lsp.config.typescript"),
-    -- pyright = require("lsp.config.pyright"),
+    pyright = require("lsp.config.pyright"),
     -- jdtls = require("lsp.config.jdtls"),
     -- remark_ls = require("lsp.config.markdown"),
 }
 
-
+-- 开启上面指定语言的lsp设置
 for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
-        -- 自定义初始化配置文件必须实现on_setup 方法
-        config.on_setup(lspconfig[name])
+        -- 每个language server 初始化方法并不完全相同，用同一套初始化流程并不能满足不同语言定制的需要，
+        -- 这里将初始化方法抽离出来，让每个语言的配置文件来负责初始化，这里来负责调用。
+        -- 本质上就是封装了一层 custom_on_setup 方法
+        config.custom_on_setup(lspconfig[name])
     else
-        -- 使用默认参数
+        -- 如果没有自定义启动方法，就使用lspconfig默认启动方法，传入默认空参
         lspconfig[name].setup({})
     end
 end
+
+-- 快捷键相关
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+-- Use LspAttach autocommand to only map the following keys
+-- after the language server attaches to the current buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+        -- Enable completion triggered by <c-x><c-o>
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+        -- Buffer local mappings.
+        -- See `:help vim.lsp.*` for documentation on any of the below functions
+        local opts = { buffer = ev.buf }
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)  -- select model 的gh使用的很少，因此这里将默认的K改成了gh
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+        -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+        -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+        -- vim.keymap.set('n', '<space>wl', function()
+        --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        -- end, opts)
+        -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+        -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+        -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+        -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+        vim.keymap.set('n', '<space>f', function()
+            vim.lsp.buf.format { async = true }
+        end, opts)
+    end,
+})
+
 
 -- lsp 结合 cmp 自动补全
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
