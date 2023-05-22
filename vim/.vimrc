@@ -2,6 +2,7 @@
 " === General ===
 set nocompatible       "取消兼容模式 
 set number             "显示行号
+set relativenumber     "相对行号
 set history=700        "历史记录条数
 set confirm            "在处理未保存或只读文件时，弹出确认提示
 filetype indent on     "开启文件类型检查，并且载入与该类型对应的缩进规则
@@ -32,7 +33,7 @@ au GuiEnter * set t_vb= "关闭beep
 " Searching
 set showmatch       "显示匹配符号，如成对的(),{}等
 set matchtime=5     "1/10 second to show the matching paren
-set nohlsearch      "搜索字符串不要高亮显示（即敲回车以后）
+"set nohlsearch      "搜索字符串不要高亮显示（即敲回车以后）
 set incsearch       "搜索输入字符串过程中高亮显示（即未敲回车）
 set ignorecase      "搜索时忽略大小写
 set smartcase       "智能大小写，需开启ignorecase
@@ -47,27 +48,6 @@ set shiftwidth=4    "统一缩进
 set softtabstop=4   "统一缩进,tab转为多少个空格
 set expandtab       "自动将tab转为空格
 set smarttab        "行首段首自动使用tab
-
-
-" == Statusline ===
-" Always show the statusline
-set laststatus=2
-
-" Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
-
-function! CurDir()
-    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
-    return curdir
-endfunction
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    else
-        return ''
-    endif
-endfunctio
 
 
 " === Files, backups and undo ===
@@ -92,3 +72,25 @@ endtry
 "命令模式下，底部操作指令按下tab键自动补全
 set wildmenu
 set wildmode=longest:list,full
+
+" 快捷键
+" set leader key
+let mapleader=" "
+let g:mapleader=" "
+" 窗口分屏
+nnoremap <leader>sv <C-w>v
+nnoremap <leader>sh <C-w>s
+nnoremap <leader>sc <C-w>c
+" hjkl切换窗口
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-t> <C-W>t
+nnoremap <S-h> <C-W>5<
+nnoremap <S-l> <C-W>5>
+nnoremap <S-j> <C-W>5-
+nnoremap <S-k> <C-W>5+
+" 取消搜索高亮
+nnoremap <leader>nh :nohl<CR>
+" 上下移动文本
