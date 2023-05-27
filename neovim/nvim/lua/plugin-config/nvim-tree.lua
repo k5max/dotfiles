@@ -17,7 +17,7 @@ nvim_tree.setup({
     },
     -- 隐藏 .文件 
     filters = {
-        dotfiles = true,
+        dotfiles = false,
         -- 自定义隐藏文件夹
         custom = { '^.git$' }
     },

@@ -77,6 +77,7 @@ packer.startup({
         -- telescope => 文件搜索
         use({
             "nvim-telescope/telescope.nvim",
+            tag = '0.1.1', -- 兼容0.8.x
             requires = { "nvim-lua/plenary.nvim" }
         })
 
