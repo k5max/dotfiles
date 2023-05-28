@@ -73,7 +73,7 @@ endtry
 set wildmenu
 set wildmode=longest:list,full
 
-" 快捷键
+" === 快捷键 ===
 " set leader key
 let mapleader=" "
 let g:mapleader=" "
@@ -87,10 +87,10 @@ nnoremap <C-l> <C-W>l
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-t> <C-W>t
-nnoremap <S-h> <C-W>5<
-nnoremap <S-l> <C-W>5>
-nnoremap <S-j> <C-W>5-
-nnoremap <S-k> <C-W>5+
+nnoremap <leader>h <C-W>5<
+nnoremap <leader>l <C-W>5>
+nnoremap <leader>j <C-W>5-
+nnoremap <leader>k <C-W>5+
 " 取消搜索高亮
 nnoremap <leader>nh :nohl<CR>
 " 上下移动文本

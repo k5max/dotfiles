@@ -19,13 +19,13 @@ keymap.set("n", "<C-h>", "<C-w>h", opt)
 keymap.set("n", "<C-j>", "<C-w>j", opt)
 keymap.set("n", "<C-k>", "<C-w>k", opt)
 keymap.set("n", "<C-l>", "<C-w>l", opt)
-keymap.set("n", "<C-t>", "<C-w>t", opt) -- 跳到最顶部窗口
+--keymap.set("n", "<C-t>", "<C-w>t", opt) -- 跳到最顶部窗口
 --keymap.set("n", "", "<C-w>b", opt)    -- 跳到最底部窗口
 -- 设置窗口比例
-keymap.set("n", "<S-h>", "<C-w>5<", opt) -- 减小宽度
-keymap.set("n", "<S-l>", "<C-w>5>", opt) -- 增加宽度
-keymap.set("n", "<S-j>", "<C-w>5-", opt) -- 减小高度
-keymap.set("n", "<S-k>", "<C-w>5+", opt) -- 增加高度
+keymap.set("n", "<leader>h", "<C-w>5<", opt) -- 减小宽度
+keymap.set("n", "<leader>l", "<C-w>5>", opt) -- 增加宽度
+keymap.set("n", "<leader>j", "<C-w>5-", opt) -- 减小高度
+keymap.set("n", "<leader>k", "<C-w>5+", opt) -- 增加高度
 
 -- 取消搜索高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>", opt)
