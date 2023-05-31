@@ -1,3 +1,5 @@
+set nu
+set relativenumber
 " No sound on errors
 set noerrorbells    "出错时不要发出响声
 set novisualbell    "出错时关闭视觉提示，通常是屏幕闪烁
