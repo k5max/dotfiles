@@ -30,6 +30,12 @@ keymap.set("n", "<leader>k", "<C-w>5+", opt) -- 增加高度
 -- 取消搜索高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>", opt)
 
+-- 禁用方向键
+keymap.set("n", "<Up>", "<Nop>", opt)
+keymap.set("n", "<Down>", "<Nop>", opt)
+keymap.set("n", "<Left>", "<Nop>", opt)
+keymap.set("n", "<Right>", "<Nop>", opt)
+
 -- ===== insert model =====
 
 

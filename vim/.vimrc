@@ -94,3 +94,9 @@ nnoremap <leader>k <C-W>5+
 " 取消搜索高亮
 nnoremap <leader>nh :nohl<CR>
 " 上下移动文本
+
+" 禁用方向键
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
