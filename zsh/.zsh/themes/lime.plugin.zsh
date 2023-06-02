@@ -180,8 +180,8 @@ prompt_lime_setup() {
 
   # Support 8 colors
   if [[ "$TERM" = *"256color" ]]; then
-    prompt_lime_default_user_color=166
-    prompt_lime_default_dir_color=075
+    prompt_lime_default_user_color=009
+    prompt_lime_default_dir_color=010
     prompt_lime_default_git_color=yellow
   else
     prompt_lime_default_user_color=cyan
