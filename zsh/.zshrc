@@ -36,6 +36,8 @@ fi
 alias ll='ls -hl'
 alias la='ls -al'
 
+alias lg='lazygit'
+
 export COLORTERM=truecolor
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
