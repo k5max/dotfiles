@@ -12,6 +12,8 @@ telescope.setup{
         initial_mode = "insert",
         mappings = {
             i = {
+                ["<C-n>"] = actions.cycle_history_next,
+                ["<C-p>"] = actions.cycle_history_prev,
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
                 ["<C-u>"] = actions.preview_scrolling_up,
@@ -22,12 +24,10 @@ telescope.setup{
     },
     pickers = {
         -- 内置 pickers 配置
-        -- picker_name = {
-        --   picker_config_key = value,
-        --   ...
-        -- }
-        -- Now the picker_config_key will be applied every time you call this
-        -- builtin picker
+        find_files = {
+            theme = "dropdown",
+            previewer = false,
+        }
     },
     extensions = {
         -- 扩展插件配置

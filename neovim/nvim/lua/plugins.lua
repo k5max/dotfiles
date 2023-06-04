@@ -47,7 +47,7 @@ packer.startup({
         -- lualine + nvim-web-devicons => 状态栏 + 图标
         use({ 
             "nvim-lualine/lualine.nvim",
-            requires = { "nvim-tree/nvim-web-devicons", opt = true } 
+            requires = { "nvim-tree/nvim-web-devicons", opt = true }
         })
 
         -- vim-tree + nvim-web-devicons => 文件树 + 图标
@@ -60,7 +60,7 @@ packer.startup({
         use({
             "nvim-treesitter/nvim-treesitter",
             requires = { "p00f/nvim-ts-rainbow" },
-            jrun = ":TSUpdate" 
+            run = ":TSUpdate"
         })
         -- bufferline => 类tab栏
         use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
@@ -77,9 +77,11 @@ packer.startup({
         -- telescope => 文件搜索
         use({
             "nvim-telescope/telescope.nvim",
-            tag = '0.1.1', -- 兼容0.8.x
+            tag = '0.1.1',
             requires = { "nvim-lua/plenary.nvim" }
         })
+        -- toggleterm => toggle terminal
+        use "akinsho/toggleterm.nvim"
 
         ---------- LSP单独拎出来 ----------
         -- installer

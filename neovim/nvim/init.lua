@@ -16,6 +16,7 @@ require("plugin-config.gitsigns")
 require("plugin-config.nvim-autopairs")
 require("plugin-config.comment")
 require("plugin-config.telescope")
+require("plugin-config.toggleterm")
 
 -- 内置LSP
 require("lsp.lsp")
