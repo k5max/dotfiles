@@ -47,3 +47,6 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, opt)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, opt) -- 环境里要安装ripgrep
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opt)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, opt)
+
+-- 加载外部的一些插件
+-- load project extension. see project.lua file

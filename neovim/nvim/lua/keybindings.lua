@@ -54,5 +54,6 @@ keymap.set("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- telescope   => plugin-config/telescope.lua
 -- gitsigns    => plugin-config/gitsigns.lua
 -- toggleterm  => plugin-config/toggleterm.lua
--- lsp
+-- which-key   => plugin-config/which-key.lua
+-- lsp         => lsp/lsp.lua
 -- cmp         => lsp/cmp.lua

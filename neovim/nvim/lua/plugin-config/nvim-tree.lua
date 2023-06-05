@@ -50,7 +50,7 @@ local opt = {
     noremap = true,
     silent = true
 }
-vim.keymap.set("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 
 -- 自动关闭
 vim.cmd([[

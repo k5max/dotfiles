@@ -17,6 +17,9 @@ require("plugin-config.nvim-autopairs")
 require("plugin-config.comment")
 require("plugin-config.telescope")
 require("plugin-config.toggleterm")
+require("plugin-config.alpha")
+require("plugin-config.project")
+require("plugin-config.which-key")
 
 -- 内置LSP
 require("lsp.lsp")

@@ -83,6 +83,15 @@ packer.startup({
         -- toggleterm => toggle terminal
         use "akinsho/toggleterm.nvim"
 
+        -- alpha-nvim => welcome package
+        use "goolord/alpha-nvim"
+
+        -- project => project manager
+        use "ahmedkhalf/project.nvim"
+
+        -- which-key => 键盘绑定导航
+        use "folke/which-key.nvim"
+
         ---------- LSP单独拎出来 ----------
         -- installer
         use({ "williamboman/mason.nvim" })

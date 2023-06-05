@@ -46,5 +46,17 @@ function _LAZYGIT_TOGGLE()
     lazygit:toggle()
 end
 
--- 为 lazygit 添加快捷键绑定 
-vim.keymap.set("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true})
+local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
+function _NCDU_TOGGLE()
+	ncdu:toggle()
+end
+
+local htop = Terminal:new({ cmd = "htop", hidden = true })
+function _HTOP_TOGGLE()
+	htop:toggle()
+end
+
+
+-- 为 lazygit 添加快捷键绑定
+-- NOTE: which-key已经指定了 
+-- vim.keymap.set("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true})
