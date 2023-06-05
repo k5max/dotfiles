@@ -35,3 +35,18 @@ bufferline.setup({
     },
 })
 
+-- -- bufferline 快捷键映射 已被which-key接管
+-- local opt = {
+--     noremap = true,
+--     silent = true
+-- }
+-- -- 左右jk切换
+-- vim.keymap.set("n", "<leader>bj", ":BufferLineCyclePrev<CR>", opt)
+-- vim.keymap.set("n", "<leader>bk", ":BufferLineCycleNext<CR>", opt)
+-- -- 关闭 使用"moll/vim-bbye"
+-- vim.keymap.set("n", "<leader>bc", ":Bdelete!<CR>", opt)
+-- vim.keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+-- vim.keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+-- vim.keymap.set("n", "<leader>bC", ":BufferLinePickClose<CR>", opt)
+
+

@@ -85,6 +85,18 @@ local mappings = {
     ["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     ["p"] = { "<cmd>Telescope projects<cr>", "Recent Projects" },
 
+    b = {
+        name = "Buffers",
+        g = { "<cmd>BufferLinePick<cr>", "Go To" },
+        f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+        j = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+        k = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+        c = { "<cmd>Bdelete!<cr>", "Close buffer" },
+        C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close"},
+        h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+        l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
+    },
+
     g = {
         name = "Git",
         g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
