@@ -1,3 +1,4 @@
+-- 修改主题，同时lualine.lua也需要设置
 local colorscheme = "sonokai"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

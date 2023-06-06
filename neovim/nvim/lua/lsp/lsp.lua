@@ -33,15 +33,15 @@ mason.setup({
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 mason_config.setup({
     ensure_installed = {
-        --"ccls", mason暂不支持
+        -- "ccls", mason暂不支持
         "clangd",
-        "cmake",
+        -- "cmake",
         "lua_ls",
-        "html",
-        "cssls",
-        "tsserver",
+        -- "html",
+        -- "cssls",
+        -- "tsserver",
         "pyright",
-        "jdtls",
+        -- "jdtls",
     },
     -- 是否应该自动安装
     automatic_installation = true,

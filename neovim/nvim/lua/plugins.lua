@@ -92,6 +92,10 @@ packer.startup({
         -- which-key => 键盘绑定导航
         use "folke/which-key.nvim"
 
+        -- indent-blankline
+        use "lukas-reineke/indent-blankline.nvim"
+
+
         ---------- LSP单独拎出来 ----------
         -- installer
         use({ "williamboman/mason.nvim" })

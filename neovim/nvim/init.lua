@@ -20,6 +20,7 @@ require("plugin-config.toggleterm")
 require("plugin-config.alpha")
 require("plugin-config.project")
 require("plugin-config.which-key")
+require("plugin-config.indent-blankline")
 
 -- 内置LSP
 require("lsp.lsp")
