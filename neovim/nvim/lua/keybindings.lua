@@ -54,6 +54,6 @@ keymap.set("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- telescope   => plugin-config/telescope.lua
 -- gitsigns    => plugin-config/gitsigns.lua
 -- toggleterm  => plugin-config/toggleterm.lua
--- which-key   => plugin-config/which-key.lua
+-- which-key   => plugin-config/which-key.lua 注意这里面的快捷键不要跟keybingings.lua里面的重复了
 -- lsp         => lsp/lsp.lua
 -- cmp         => lsp/cmp.lua

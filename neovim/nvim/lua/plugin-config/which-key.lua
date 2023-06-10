@@ -158,12 +158,20 @@ local mappings = {
     --     },
     -- },
 
+    c = {
+        name = "Colorscheme",
+        s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        p = {
+            "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+            "Colorscheme with Preview",
+        },
+    },
+
     s = {
         name = "Search",
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
+        H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        -- H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
@@ -171,11 +179,8 @@ local mappings = {
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         l = { "<cmd>Telescope resume<cr>", "Resume last search" },
-        p = {
-            "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-            "Colorscheme with Preview",
-        },
     },
+
 
     t = {
         name = "Terminal",
