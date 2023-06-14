@@ -29,7 +29,7 @@ local function footer()
     -- local fortune = handle:read("*a")
     -- handle:close()
     -- return fortune
-    return "liwu"
+    return "A journey of 1000 miles begins with a single step."
 end
 
 dashboard.section.footer.val = footer()
