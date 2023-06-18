@@ -2,12 +2,12 @@
 require("basic")
 -- keyboard mapping
 require("keybindings")
--- packer plugin manage
+-- plugins manager
 require("plugins")
--- theme setting
-require("colorscheme")
 
--- plugin setting
+-- theme setting
+require("plugin-config.colorscheme")
+-- basic plugin setting
 require("plugin-config.lualine")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.nvim-tree")
@@ -21,8 +21,7 @@ require("plugin-config.alpha")
 require("plugin-config.project")
 require("plugin-config.which-key")
 require("plugin-config.indent-blankline")
-
--- 内置LSP
-require("lsp.lsp")
-require("lsp.cmp")
-require("lsp.ui")
+-- LSP setting
+require("plugin-config.lsp.lsp")
+require("plugin-config.lsp.cmp")
+require("plugin-config.lsp.ui")
