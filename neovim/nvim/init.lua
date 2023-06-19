@@ -1,13 +1,14 @@
--- basic setting
+-- 基础设置
 require("basic")
--- keyboard mapping
+-- 快捷键映射
 require("keybindings")
--- plugins manager
+-- 自动命令 
+require("autocmd")
+-- lazynvim 插件管理
 require("plugins")
-
 -- theme setting
-require("plugin-config.colorscheme")
--- basic plugin setting
+require("colorscheme")
+-- plugin setting
 require("plugin-config.lualine")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.nvim-tree")

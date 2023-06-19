@@ -22,7 +22,6 @@ end
 lazy.setup({
     ---------- Themes ----------
     -- 可以安装多个主题，外面指定即可
-    { "navarasu/onedark.nvim", lazy = true },
     { "sainnhe/sonokai", lazy = true },
 
     ---------- Plugins ----------
