@@ -72,22 +72,26 @@ lazy.setup({
     "neovim/nvim-lspconfig",
 
     -- Neovim 本身不支持代码补全，需要通过插件实现 --
-    -- 补全引擎
-    "hrsh7th/nvim-cmp",
+    -- cmp 补全引擎
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            -- 补全源
+            "hrsh7th/cmp-nvim-lsp", -- { name = nvim_lsp }
+            "hrsh7th/cmp-buffer", -- { name = 'buffer' },
+            "hrsh7th/cmp-path", -- { name = 'path' }
+            "hrsh7th/cmp-cmdline", -- { name = 'cmdline' }
+            "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
 
-    -- 补全源
-    "hrsh7th/cmp-nvim-lsp", -- { name = nvim_lsp }
-    "hrsh7th/cmp-buffer", -- { name = 'buffer' },
-    "hrsh7th/cmp-path", -- { name = 'path' }
-    "hrsh7th/cmp-cmdline", -- { name = 'cmdline' }
-    "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
+            -- 还可以配置一些扩展的snippet 比如vsnip luasnip utilsnip snippy
+            -- For vsnip users
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/vim-vsnip",
 
-    -- 还可以配置一些扩展的snippet 比如vsnip luasnip utilsnip snippy
-    -- For vsnip users
-    "hrsh7th/cmp-vsnip",
-    "hrsh7th/vim-vsnip",
+            -- For luasnip users
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+        }
+    },
 
-    -- For luasnip users
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
 })

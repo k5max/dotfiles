@@ -7,7 +7,7 @@ require("autocmd")
 -- lazynvim 插件管理
 require("plugins")
 -- theme setting
-require("colorscheme")
+require("plugin-config.colorscheme")
 -- plugin setting
 require("plugin-config.lualine")
 require("plugin-config.nvim-treesitter")
@@ -25,4 +25,3 @@ require("plugin-config.indent-blankline")
 -- LSP setting
 require("plugin-config.lsp.lsp")
 require("plugin-config.lsp.cmp")
-require("plugin-config.lsp.ui")
