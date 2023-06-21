@@ -5,12 +5,7 @@ return {
         dependencies = { "p00f/nvim-ts-rainbow" },
         build = ":TSUpdate",
         config = function()
-            local status, treesitter = pcall(require, "nvim-treesitter.configs")
-            if not status then
-                vim.notify("nvim-treesitter not found")
-                return
-            end
-
+            local treesitter = require("nvim-treesitter.configs")
             treesitter.setup({
                 -- 安装 language parser
                 -- :TSInstallInfo 命令查看支持的语言

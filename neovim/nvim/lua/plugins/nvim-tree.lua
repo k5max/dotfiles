@@ -4,12 +4,7 @@ return {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            local status, nvim_tree = pcall(require, "nvim-tree")
-            if not status then
-                vim.notify("nvim-tree not found")
-                return
-            end
-
+            local nvim_tree = require("nvim-tree")
             nvim_tree.setup({
                 -- 排序规则
                 sort_by = "case_sensitive",

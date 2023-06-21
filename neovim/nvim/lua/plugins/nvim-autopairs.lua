@@ -3,12 +3,7 @@ return {
         -- nvim-autopairs => 自动补全括号之类
         "windwp/nvim-autopairs",
         config = function()
-            local status, autopairs = pcall(require, "nvim-autopairs")
-            if not status then
-                vim.notify("nvim-autopairs not found")
-                return
-            end
-
+            local autopairs = require("nvim-autopairs")
             autopairs.setup({
                 check_ts = true,
                 ts_config = {

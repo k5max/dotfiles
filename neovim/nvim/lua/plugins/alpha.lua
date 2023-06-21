@@ -3,11 +3,7 @@ return {
         -- alpha-nvim => welcome package
         "goolord/alpha-nvim",
         config = function()
-            local status_ok, alpha = pcall(require, "alpha")
-            if not status_ok then
-                vim.notify("alpha not found")
-                return
-            end
+            local alpha = require("alpha")
             local dashboard = require("alpha.themes.dashboard")
             dashboard.section.header.val = {
                 [[                               __                ]],

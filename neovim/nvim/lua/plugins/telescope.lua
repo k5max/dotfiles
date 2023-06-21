@@ -5,12 +5,7 @@ return {
         version = '0.1.1',
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            local status, telescope = pcall(require, "telescope")
-            if not status then
-                vim.notify("telescope not found")
-                return
-            end
-
+            local telescope = require("telescope")
             local actions = require('telescope.actions')
             telescope.setup{
                 defaults = {

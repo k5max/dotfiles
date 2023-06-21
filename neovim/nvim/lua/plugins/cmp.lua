@@ -21,12 +21,7 @@ return {
             "saadparwaiz1/cmp_luasnip",
         },
         config = function()
-            local status, cmp = pcall(require, "cmp")
-            if not status then
-                vim.notify("cmp not found")
-                return
-            end
-
+            local cmp = require("cmp")
             -- Define icons on your own
             local kind_icons = {
                 Text = "",

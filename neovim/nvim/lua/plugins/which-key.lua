@@ -3,12 +3,7 @@ return {
         -- which-key => 键盘绑定导航
         "folke/which-key.nvim",
         config = function()
-            local status_ok, which_key = pcall(require, "which-key")
-            if not status_ok then
-                vim.notify("which-key not found")
-                return
-            end
-
+            local which_key = require("which-key")
             local setup = {
                 plugins = {
                     marks = false,        -- shows a list of your marks on ' and `

@@ -3,11 +3,7 @@ return {
         -- project => project manager
         "ahmedkhalf/project.nvim",
         config = function()
-            local status_ok, project = pcall(require, "project_nvim")
-            if not status_ok then
-                vim.notify("project not found")
-                return
-            end
+            local project = require("project_nvim")
             project.setup({
                 -- Manual mode doesn't automatically change your root directory, so you have
                 -- the option to manually do so using `:ProjectRoot` command.
@@ -43,12 +39,7 @@ return {
                 datapath = vim.fn.stdpath("data"),
             })
 
-            local tele_status_ok, telescope = pcall(require, "telescope")
-            if not tele_status_ok then
-                vim.notify("telescope not found")
-                return
-            end
-
+            local telescope = require("telescope")
             telescope.load_extension('projects')
         end
     }

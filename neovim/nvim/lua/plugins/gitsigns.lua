@@ -3,14 +3,8 @@ return {
         -- gitsigns => 左侧git提示    
         "lewis6991/gitsigns.nvim",
         config = function()
-            local status, gitsigns = pcall(require, "gitsigns")
-            if not status then
-                vim.notify("gitsigns not found")
-                return
-            end
-
+            local gitsigns = require("gitsigns")
             gitsigns.setup({
-
                 -- 字母图标 A 增加，C修改，D 删除
                 signs = {
                     add = { hl = "GitSignsAdd", text = "A|", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },

@@ -5,12 +5,7 @@ return {
         config = function()
 
             -- mason 和 mason-lspconfig 负责安装和管理 LSP 服务器
-            local status, mason = pcall(require, "mason")
-            if not status then
-                vim.notify("mason not found")
-                return
-            end
-
+            local mason = require("mason")
             -- :h mason-default-settings
             -- ~/.local/share/nvim/mason
             mason.setup({
@@ -28,12 +23,7 @@ return {
         -- mason.nvim和neovim官方lspconfig的桥梁
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            local status, mason_config = pcall(require, "mason-lspconfig")
-            if not status then
-                vim.notify("mason-lspconfig not found")
-                return
-            end
-
+            local mason_config = require("mason-lspconfig")
             -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
             -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
             mason_config.setup({
@@ -57,12 +47,7 @@ return {
         -- lspconfig
         "neovim/nvim-lspconfig",
         config = function()
-            local status, lspconfig = pcall(require, "lspconfig")
-            if not status then
-                vim.notify("lspconfig not found")
-                return
-            end
-
+            local lspconfig = require("lspconfig")
             -- language server 安装列表
             -- { key: 服务器名， value: 配置文件 }
             -- key 必须为下列网址列出的 server name，不可以随便写

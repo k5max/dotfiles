@@ -5,12 +5,7 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
         config = function()
             -- https://github.com/nvim-lualine/lualine.nvim
-            local status, lualine = pcall(require, "lualine")
-            if not status then
-                vim.notify("lualine not found")
-                return
-            end
-
+            local lualine = require("lualine")
             lualine.setup {
                 options = {
                     icons_enabled = true,

@@ -3,13 +3,7 @@ return {
         -- toggleterm => toggle terminal
         "akinsho/toggleterm.nvim",
         config = function()
-
-            local status_ok, toggleterm = pcall(require, "toggleterm")
-            if not status_ok then
-                vim.notify("telescope not found")
-                return
-            end
-
+            local toggleterm = require("toggleterm")
             toggleterm.setup({
                 size = 20,
                 open_mapping = [[<c-\>]],

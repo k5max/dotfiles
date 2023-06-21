@@ -3,12 +3,7 @@ return {
         "akinsho/bufferline.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons", "moll/vim-bbye" },
         config = function()
-            local status, bufferline = pcall(require, "bufferline")
-            if not status then
-                vim.notify("bufferline not found")
-                return
-            end
-
+            local bufferline = require("bufferline")
             bufferline.setup({
                 options = {
                     -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令
