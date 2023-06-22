@@ -2,7 +2,7 @@
 require("basic")
 -- 快捷键映射
 require("keybindings")
--- 自动命令 
+-- 自动命令
 require("autocmd")
 -- lazynvim 插件管理
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -26,4 +26,3 @@ if not status_ok then
 end
 -- 加载所有插件
 lazy.setup("plugins")
-

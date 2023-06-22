@@ -1,59 +1,57 @@
 return {
-    {
-        -- treesitter + nvim-ts-rainbow => 语法高亮 + 不同括号颜色区分
-        "nvim-treesitter/nvim-treesitter",
-        dependencies = { "p00f/nvim-ts-rainbow" },
-        build = ":TSUpdate",
-        config = function()
-            local treesitter = require("nvim-treesitter.configs")
-            treesitter.setup({
-                -- 安装 language parser
-                -- :TSInstallInfo 命令查看支持的语言
-                ensure_installed = {"c", "cpp", "java", "python", "javascript", "typescript", "html", "css", "sql", "lua", "vim", "json", "markdown"},
+    -- treesitter + nvim-ts-rainbow => 语法高亮 + 不同括号颜色区分
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = { "p00f/nvim-ts-rainbow" },
+    build = ":TSUpdate",
+    config = function()
+        local treesitter = require("nvim-treesitter.configs")
+        treesitter.setup({
+            -- 安装 language parser
+            -- :tsinstallinfo 命令查看支持的语言
+            ensure_installed = {"c", "cpp", "java", "python", "javascript", "typescript", "html", "css", "sql", "lua", "vim", "json", "markdown"},
 
-                -- 启用代码高亮模块
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                },
-                -- 启用增量选择模块
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<CR>",
-                        node_incremental = "<CR>",
-                        node_decremental = "<BS>",
-                        scope_incremental = "<TAB>",
-                    },
-                },
-                -- 启用代码缩进模块 (=)
-                indent = {
-                    enable = true,
-                },
-                -- p00f/nvim-ts-rainbow
-                rainbow = {
-                    enable = true,
-                    -- disable = { "cpp" }, list of languages you want to disable the plugin for
-                    extended_mode = true, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-                    max_file_lines = nil, -- do not enable for files with more than n lines, int
-                    colors = {
-                        "#95ca60",
-                        "#ee6985",
-                        "#D6A760",
-                        "#7794f4",
-                        "#b38bf5",
-                        "#7cc7fe",
-                    }, -- table of hex strings
-                    -- termcolors = { } -- table of colour name strings
-                },
-            })
+            -- 启用代码高亮模块
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
+            -- 启用增量选择模块
+            -- incremental_selection = {
+            --     enable = true,
+            --     keymaps = {
+            --         init_selection = "<cr>",
+            --         node_incremental = "<cr>",
+            --         node_decremental = "<bs>",
+            --         scope_incremental = "<tab>",
+            --     },
+            -- },
+            -- 启用代码缩进模块 (=)
+            indent = {
+                enable = true,
+            },
+            -- p00f/nvim-ts-rainbow
+            rainbow = {
+                enable = true,
+                -- disable = { "cpp" }, list of languages you want to disable the plugin for
+                extended_mode = true, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                max_file_lines = nil, -- do not enable for files with more than n lines, int
+                colors = {
+                    "#95ca60",
+                    "#ee6985",
+                    "#d6a760",
+                    "#7794f4",
+                    "#b38bf5",
+                    "#7cc7fe",
+                }, -- table of hex strings
+                -- termcolors = { } -- table of colour name strings
+            },
+        })
 
-            -- 快捷键绑定
-            -- 开启 Folding 模块
-            vim.opt.foldmethod = "expr"
-            vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-            -- 默认不要折叠
-            vim.opt.foldlevel = 99
-        end
-    },
+        -- 快捷键绑定
+        -- 开启 Folding 模块 ==> zc，zo 会折叠 {} 里的内容
+        vim.opt.foldmethod = "expr"
+        vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+        -- 默认不要折叠
+        vim.opt.foldlevel = 99
+    end
 }
