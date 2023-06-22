@@ -26,7 +26,7 @@ keymap.set("n", "<leader>j", "<C-w>5-", opt) -- 减小高度
 keymap.set("n", "<leader>k", "<C-w>5+", opt) -- 增加高度
 
 -- 取消搜索高亮
--- keymap.set("n", "<leader>nh", ":nohl<CR>", opt)
+keymap.set("n", "<leader>nh", ":nohl<CR>", opt)
 
 -- 禁用方向键
 keymap.set("n", "<Up>", "<Nop>", opt)
