@@ -1,7 +1,6 @@
 return {
     -- telescope => 文件搜索
     "nvim-telescope/telescope.nvim",
-    version = '0.1.1',
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
         local telescope = require("telescope")
