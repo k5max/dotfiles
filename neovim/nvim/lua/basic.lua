@@ -5,6 +5,8 @@ vim.o.fileencoding = 'utf-8'
 -- 行号与相对行号
 vim.o.number = true
 vim.o.relativenumber = true
+-- 退出提示
+vim.o.confirm = true
 -- 高亮所在行
 vim.wo.cursorline = true
 -- 显示左侧图标指示列
