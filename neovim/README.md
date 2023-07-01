@@ -2,6 +2,7 @@
 
 ## 目录结构
 
+```
 nvim
 ├── init.lua
 ├── lazy-lock.json
@@ -32,10 +33,7 @@ nvim
         ├── telescope.lua
         ├── toggleterm.lua
         └── which-key.lua
-
-
-
-简介
+```
 
 init.lua -- init文件
 
