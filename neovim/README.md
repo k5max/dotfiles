@@ -163,7 +163,7 @@ plugins -- 插件文件配置所在目录
 | 选中上一个补全提示信息               | \<S-Tab>          | nvim-cmp             | insert        |
 | 选中当前补全提示                     | \<CR>             | nvim-cmp             | insert        |
 | 注释单行                             | gcc               | Comment.nvim         | normal,visual |
-| 注释多行                             | gc                | Comment.nvim         | visual        |
+| 注释多行                             | gc                | Comment.nvim         | normal,visual |
 | Gitsigns next_hunk                   | ;j                | gitsigns.nvim        | normal        |
 | Gitsigns prev_hunk                   | ;k                | gitsigns.nvim        | normal        |
 | Gitsigns stage_hunk                  | ;hs               | gitsigns.nvim        | normal        |
