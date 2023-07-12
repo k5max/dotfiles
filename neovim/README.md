@@ -94,9 +94,9 @@ plugins -- 插件文件配置所在目录
 
 ## 快捷键
 
-### 基本快捷键
+### 改键后快捷键
 
-| cammand          | keybinding  | origin        | model  |
+| command          | keybinding  | origin        | model  |
 | ---------------- | ----------- | ------------- | ------ |
 | 垂直分屏         | \<leader>sv | \<C-w>v       | normal |
 | 水平分屏         | \<leader>sh | \<C-w>s       | normal |
@@ -122,7 +122,7 @@ plugins -- 插件文件配置所在目录
 
 ### 插件快捷键
 
-| cammand                              | keybinding        | plugin               | model         |
+| command                              | keybinding        | plugin               | model         |
 | ------------------------------------ | ----------------- | -------------------- | ------------- |
 | 打开欢迎页                           | \<leader>a        | alpha-nvim           | normal        |
 | 打开/关闭侧边文件栏                  | \<leader>e        | nvim-tree            | normal        |
