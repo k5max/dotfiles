@@ -157,14 +157,14 @@ return {
             --     },
             -- },
 
-            c = {
-                name = "Colorscheme",
-                s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-                p = {
-                    "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-                    "Colorscheme with Preview",
-                },
-            },
+            -- c = {
+            --     name = "Colorscheme",
+            --     s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+            --     p = {
+            --         "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+            --         "Colorscheme with Preview",
+            --     },
+            -- },
 
             s = {
                 name = "Search",
