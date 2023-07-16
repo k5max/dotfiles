@@ -1,24 +1,37 @@
-### 加载外部其他设置，包括主题，插件 ###
-# theme(prompt)设置
-if [[ -e ~/.zsh/themes/lime.plugin.zsh  ]]; then
-    source ~/.zsh/themes/lime.plugin.zsh
+### 加载 zsh prompt/插件 ###
+# prompt设置
+if [ -f ~/.zsh/prompts/lime.plugin.zsh ]; then
+    source ~/.zsh/prompts/lime.plugin.zsh
 fi
 # z quick jump plugin
-if [[ -e ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh  ]]; then
+if [ -f ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh ]; then
     source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
 fi
 # Auto suggestion
-if [[ -e ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh  ]]; then
+if [ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 # Syntax highlighting
-if [[ -e ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  ]]; then
+if [ -f ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+### 加载 Shell extentsions ###
+# fzf
+if [ -f ~/.zsh/extentsions/fzf/key-bindings.zsh ]; then
+    source ~/.zsh/extentsions/fzf/key-bindings.zsh
+fi
+if [ -f ~/.zsh/extentsions/fzf/completion.zsh ]; then
+    source ~/.zsh/extentsions/fzf/completion.zsh
+fi
+
 ### Basic ###
-# Turn off the beep/bell
+# 关闭beep声音
 unsetopt beep
+# 设置历史命令记录数
+HISTSIZE=1000
+# 设置记录历史文件大小
+HISTFILESIZE=2000
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -35,12 +48,16 @@ fi
 ### alias ###
 alias ll='ls -hl'
 alias la='ls -al'
-
 alias lg='lazygit'
 
-export COLORTERM=truecolor
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+# export COLORTERM=truecolor
+# export CLICOLOR=1
+# export LSCOLORS=GxFxCxDxBxegedabagaced
+export PATH="$HOME/.local/bin:$PATH"
+
+# fzf设置
+export FZF_COMPLETION_TRIGGER='\'
+export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
 
 ### 外部引用命令 ###
 export NVM_DIR="$HOME/.nvm"
