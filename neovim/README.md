@@ -179,8 +179,132 @@ plugins -- 插件文件配置所在目录
 | Gitsigns toggle_deleted              | ;td               | gitsigns.nvim        | normal        |
 | Gitsigns select_hunk                 | ih                | gitsigns.nvim        | o             |
 | Gitsigns select_hunk                 | ih                | gitsigns.nvim        | x             |
+| Copilot 安装                         | 其实只需执行一次  | copilot.vim          |               |
+| Copilot enable                       | \<leader>ce       | copilot.vim          | normal        |
+| Copilot disable                      | \<leader>cd       | copilot.vim          | normal        |
 
 
 
-which-key.nvim 的 快捷键绑定直接打开插件后查看即可，具体不详写。
+which-key.nvim 的 快捷键绑定直接打开插件后查看即可，下面是配置：
+
+```lua
+local mappings = {
+    ["a"] = { "<cmd>Alpha<cr>", "Welcome" },
+    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    ["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    ["p"] = { "<cmd>Telescope projects<cr>", "Recent Projects" },
+
+    b = {
+        name = "Buffers",
+        g = { "<cmd>BufferLinePick<cr>", "Go To" },
+        f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+        j = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+        k = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+        c = { "<cmd>Bdelete!<cr>", "Close buffer" },
+        C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close"},
+        h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+        l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
+    },
+
+    g = {
+        name = "Git",
+        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+        f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
+        j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
+        k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
+        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+        S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
+        u = {
+            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+            "Undo Stage Hunk",
+        },
+        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        C = {
+            "<cmd>Telescope git_bcommits<cr>",
+            "Checkout commit(for current file)",
+        },
+        d = {
+            "<cmd>Gitsigns diffthis HEAD<cr>",
+            "Git Diff",
+        },
+        D = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
+    },
+
+    -- l = {
+    --     name = "LSP",
+    --     l = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    --     d = {
+    --         "<cmd>Telescope lsp_document_diagnostics<cr>",
+    --         "Document Diagnostics",
+    --     },
+    --     w = {
+    --         "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+    --         "Workspace Diagnostics",
+    --     },
+    --     f = { "<cmd>Format<cr>", "Format" },
+    --     i = { "<cmd>LspInfo<cr>", "Info" },
+    --     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+    --     j = {
+    --         "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+    --         "Next Diagnostic",
+    --     },
+    --     k = {
+    --         "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+    --         "Prev Diagnostic",
+    --     },
+    --     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+    --     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    --     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    --     S = {
+    --         "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+    --         "Workspace Symbols",
+    --     },
+    -- },
+
+    -- c = {
+    --    name = "Colorscheme",
+    --    s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    --    p = {
+    --        "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+    --        "Colorscheme with Preview",
+    --    },
+    -- },
+    
+
+    s = {
+        name = "Search",
+        f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        -- H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
+        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        R = { "<cmd>Telescope registers<cr>", "Registers" },
+        t = { "<cmd>Telescope live_grep<cr>", "Text" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        C = { "<cmd>Telescope commands<cr>", "Commands" },
+        l = { "<cmd>Telescope resume<cr>", "Resume last search" },
+    },
+
+
+    t = {
+        name = "Terminal",
+        u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+        h = { "<cmd>ToggleTerm direction=horizontal size=10<cr>", "Horizontal" },
+        v = { "<cmd>ToggleTerm direction=vertical size=80<cr>", "Vertical" },
+    },
+}
+
+```
+
+
+
+
 
