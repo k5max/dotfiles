@@ -85,13 +85,13 @@ return {
             ["p"] = { "<cmd>Telescope projects<cr>", "Recent Projects" },
 
             b = {
-                name = "Buffers",
+                name = "Buffer",
                 g = { "<cmd>BufferLinePick<cr>", "Go To" },
                 f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-                j = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-                k = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+                j = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+                k = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
                 c = { "<cmd>Bdelete!<cr>", "Close buffer" },
-                C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close"},
+                C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
                 h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
                 l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
             },
@@ -108,21 +108,12 @@ return {
                 R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
                 s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
                 S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
-                u = {
-                    "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-                    "Undo Stage Hunk",
-                },
+                u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
                 o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
                 b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
                 c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-                C = {
-                    "<cmd>Telescope git_bcommits<cr>",
-                    "Checkout commit(for current file)",
-                },
-                d = {
-                    "<cmd>Gitsigns diffthis HEAD<cr>",
-                    "Git Diff",
-                },
+                C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
+                d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff" },
                 D = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
             },
 
