@@ -179,130 +179,69 @@ plugins -- 插件文件配置所在目录
 | Gitsigns toggle_deleted              | ;td               | gitsigns.nvim        | normal        |
 | Gitsigns select_hunk                 | ih                | gitsigns.nvim        | o             |
 | Gitsigns select_hunk                 | ih                | gitsigns.nvim        | x             |
-| Copilot 安装                         | 其实只需执行一次  | copilot.vim          |               |
+| Copilot 安装（:Copilot<CR>）         | 其实只需执行一次  | copilot.vim          | teminal       |
 | Copilot enable                       | \<leader>ce       | copilot.vim          | normal        |
 | Copilot disable                      | \<leader>cd       | copilot.vim          | normal        |
+| copilot-dismiss                      | <C-]>             | copilot.vim          | insert        |
+| copilot-suggest                      | <M-\\>            | copilot.vim          | insert        |
+| copilot-next                         | <M-]>             | copilot.vim          | insert        |
+| copilot-previous                     | <M-[>             | copilot.vim          | insert        |
 
 
 
-which-key.nvim 的 快捷键绑定直接打开插件后查看即可，下面是配置：
+which-key.nvim 的快捷键绑定。需要进入 which-key，先按下 leader 键。
 
-```lua
-local mappings = {
-    ["a"] = { "<cmd>Alpha<cr>", "Welcome" },
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    ["p"] = { "<cmd>Telescope projects<cr>", "Recent Projects" },
-
-    b = {
-        name = "Buffers",
-        g = { "<cmd>BufferLinePick<cr>", "Go To" },
-        f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-        j = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-        k = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-        c = { "<cmd>Bdelete!<cr>", "Close buffer" },
-        C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close"},
-        h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-        l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
-    },
-
-    g = {
-        name = "Git",
-        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-        f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
-        j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
-        k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
-        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-        S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
-        u = {
-            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-            "Undo Stage Hunk",
-        },
-        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-        C = {
-            "<cmd>Telescope git_bcommits<cr>",
-            "Checkout commit(for current file)",
-        },
-        d = {
-            "<cmd>Gitsigns diffthis HEAD<cr>",
-            "Git Diff",
-        },
-        D = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
-    },
-
-    -- l = {
-    --     name = "LSP",
-    --     l = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    --     d = {
-    --         "<cmd>Telescope lsp_document_diagnostics<cr>",
-    --         "Document Diagnostics",
-    --     },
-    --     w = {
-    --         "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-    --         "Workspace Diagnostics",
-    --     },
-    --     f = { "<cmd>Format<cr>", "Format" },
-    --     i = { "<cmd>LspInfo<cr>", "Info" },
-    --     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    --     j = {
-    --         "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-    --         "Next Diagnostic",
-    --     },
-    --     k = {
-    --         "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-    --         "Prev Diagnostic",
-    --     },
-    --     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    --     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    --     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    --     S = {
-    --         "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-    --         "Workspace Symbols",
-    --     },
-    -- },
-
-    -- c = {
-    --    name = "Colorscheme",
-    --    s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    --    p = {
-    --        "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-    --        "Colorscheme with Preview",
-    --    },
-    -- },
-    
-
-    s = {
-        name = "Search",
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        H = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        -- H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
-        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        R = { "<cmd>Telescope registers<cr>", "Registers" },
-        t = { "<cmd>Telescope live_grep<cr>", "Text" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
-        l = { "<cmd>Telescope resume<cr>", "Resume last search" },
-    },
+| mapping | command                           | 分类     | model  |
+| ------- | --------------------------------- | -------- | ------ |
+| a       | 进入欢迎页                        |          | normal |
+| e       | 打开侧边栏                        |          | normal |
+| r       | 打开最近文件                      |          | normal |
+| p       | 最近项目                          |          | normal |
+|         |                                   |          |        |
+| bg      | 选择一个buffer跳转                | Buffers  | normal |
+| bf      | 用telescope查找buffer             | Buffers  | normal |
+| bj      | 下一个buffer                      | Buffers  | normal |
+| bk      | 上一个buffer                      | Buffers  | normal |
+| bc      | 关闭buffer                        | Buffers  | normal |
+| bC      | 选择一个buffer关闭                | Buffers  | normal |
+| bh      | 关闭所有左侧的buffer              | Buffers  | normal |
+| bl      | 关闭所有右侧的buffer              | Buffers  | normal |
+|         |                                   |          |        |
+| gg      | 打开lazygit                       | Git      | normal |
+| gf      | file history                      | Git      | normal |
+| gj      | next hunk                         | Git      | normal |
+| gk      | prev hunk                         | Git      | normal |
+| gl      | blame line                        | Git      | normal |
+| gp      | preview hunk                      | Git      | normal |
+| gr      | reset hunk                        | Git      | normal |
+| gR      | reset buffer                      | Git      | normal |
+| gs      | stage hunk                        | Git      | normal |
+| gS      | stage buffer                      | Git      | normal |
+| gu      | undo stage hunk                   | Git      | normal |
+| go      | open changed file                 | Git      | normal |
+| gb      | checkout branch                   | Git      | normal |
+| gc      | checkout commit                   | Git      | normal |
+| gC      | checkout commit(for current file) | Git      | normal |
+| gd      | git diff                          | Git      | normal |
+| gD      | diff project                      | Git      | normal |
+|         |                                   |          |        |
+| sf      | 搜索文件                          | Search   | normal |
+| sH      | 查找帮助                          | Search   | normal |
+| sM      | man page                          | Search   | normal |
+| sr      | 打开最近文件列表                  | Search   | normal |
+| sR      | Register                          | Search   | normal |
+| st      | Text                              | Search   | normal |
+| sk      | Keymaps                           | Search   | normal |
+| sC      | Commands                          | Search   | normal |
+| sl      | Resume last search                | Search   | normal |
+|         |                                   |          |        |
+| tu      | 打开NCDU                          | Terminal | normal |
+| tt      | 打开htop                          | Terminal | normal |
+| tf      | 以浮动弹窗方式打开终端            | Terminal | normal |
+| th      | 以水平方式打开终端                | Terminal | normal |
+| tv      | 以垂直方式打开终端                | Terminal | normal |
 
 
-    t = {
-        name = "Terminal",
-        u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-        h = { "<cmd>ToggleTerm direction=horizontal size=10<cr>", "Horizontal" },
-        v = { "<cmd>ToggleTerm direction=vertical size=80<cr>", "Vertical" },
-    },
-}
-
-```
 
 
 
