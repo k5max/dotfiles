@@ -11,16 +11,18 @@ nvim
     ├── basic.lua
     ├── keybindings.lua
     ├── lsp
-    │   ├── clangd.lua
-    │   ├── lua.lua
-    │   └── pyright.lua
+    │   ├── clangd.lua
+    │   ├── lua.lua
+    │   └── pyright.lua
     └── plugins
         ├── alpha.lua
         ├── bufferline.lua
         ├── cmp.lua
         ├── colorscheme.lua
         ├── comment.lua
+        ├── copilot.lua
         ├── gitsigns.lua
+        ├── im-select.lua
         ├── indent-blankline.lua
         ├── leap.lua
         ├── lsp.lua
