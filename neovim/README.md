@@ -113,10 +113,6 @@ plugins -- 插件文件配置所在目录
 | 减小5行高度      | \<leader>j  | \<C-w>5-      | normal |
 | 增加5行高度      | \<leader>k  | \<C-w>5+      | normal |
 | 取消搜索高亮     | \<leader>nh | :nohl\<CR>    | normal |
-| 禁用上方向键     | \<Nop>      | \<Up>         | normal |
-| 禁用下方向键     | \<Nop>      | \<Down>       | normal |
-| 禁用左方向键     | \<Nop>      | \<Left>       | normal |
-| 禁用右方向键     | \<Nop>      | \<Right>      | normal |
 | 下移选中的文本   | J           | >+1\<CR>gv-gv | visual |
 | 上移选中的文本   | K           | <-2\<CR>gv-gv | visual |
 
