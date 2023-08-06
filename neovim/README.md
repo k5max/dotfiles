@@ -198,6 +198,7 @@ plugins -- 插件文件配置所在目录
 | lsp.buf.definition        | gd                | nvim-lspconfig | normal |
 | lsp.buf.hover             | gh                | nvim-lspconfig | normal |
 | lsp.buffer.implementation | gi                | nvim-lspconfig | normal |
+| lsp.buffer.references     | gr                | nvim-lspconfig | normal |
 | lsp格式化                 | \<space>f         | nvim-lspconfig | normal |
 | 浮动窗口打开错误提示      | \<space>\<space>e | nvim-lspconfig | normal |
 | 跳到上一个错误            | [d                | nvim-lspconfig | normal |
@@ -235,28 +236,30 @@ plugins -- 插件文件配置所在目录
 
 #### gitsigns
 
-| command                            | keybinding | plugin        | model  |
-| ---------------------------------- | ---------- | ------------- | ------ |
-| Gitsigns next_hunk                 | ;j         | gitsigns.nvim | normal |
-| Gitsigns prev_hunk                 | ;k         | gitsigns.nvim | normal |
-| Gitsigns stage_hunk                | ;hs        | gitsigns.nvim | normal |
-| Gitsigns reset_hunk                | ;hr        | gitsigns.nvim | normal |
-| Gitsigns undo_stage_hunk           | ;hu        | gitsigns.nvim | normal |
-| Gitsigns prev_hunk                 | ;hp        | gitsigns.nvim | normal |
-| Gitsigns stage_buffer              | ;hS        | gitsigns.nvim | normal |
-| Gitsigns reset_buffer              | ;hR        | gitsigns.nvim | normal |
-| blame line                         | ;hb        | gitsigns.nvim | normal |
-| Gitsigns diffthis                  | ;hd        | gitsigns.nvim | normal |
-| diffthis("~")                      | ;hD        | gitsigns.nvim | normal |
-| Gitsigns toggle_current_line_blame | ;tb        | gitsigns.nvim | normal |
-| Gitsigns toggle_deleted            | ;td        | gitsigns.nvim | normal |
-| Gitsigns select_hunk               | ih         | gitsigns.nvim | o      |
-| Gitsigns select_hunk               | ih         | gitsigns.nvim | x      |
-| ...                                |            |               |        |
+| command                            | keybinding  | plugin        | model  |
+| ---------------------------------- | ----------- | ------------- | ------ |
+| Gitsigns next_hunk                 | \<leader>hj | gitsigns.nvim | normal |
+| Gitsigns prev_hunk                 | \<leader>hk | gitsigns.nvim | normal |
+| Gitsigns stage_hunk                | \<leader>hs | gitsigns.nvim | normal |
+| Gitsigns reset_hunk                | \<leader>hr | gitsigns.nvim | normal |
+| Gitsigns undo_stage_hunk           | \<leader>hu | gitsigns.nvim | normal |
+| Gitsigns prev_hunk                 | \<leader>hp | gitsigns.nvim | normal |
+| Gitsigns stage_buffer              | \<leader>hS | gitsigns.nvim | normal |
+| Gitsigns reset_buffer              | \<leader>hR | gitsigns.nvim | normal |
+| blame line                         | \<leader>hb | gitsigns.nvim | normal |
+| Gitsigns diffthis == 比较当前文件  | \<leader>hd | gitsigns.nvim | normal |
+| diffthis("~") == 比较当前行        | \<leader>hD | gitsigns.nvim | normal |
+| Gitsigns toggle_current_line_blame | \<leader>tb | gitsigns.nvim | normal |
+| Gitsigns toggle_deleted            | \<leader>td | gitsigns.nvim | normal |
+| Gitsigns select_hunk               | ih          | gitsigns.nvim | o      |
+| Gitsigns select_hunk               | ih          | gitsigns.nvim | x      |
+| ...                                |             |               |        |
 
 
 
 #### whick key
+
+which功能就是**整合命令 + 提示**。
 
 进入 which-key，normal 模式下只按下 leader 键就会出现页面。
 
@@ -267,32 +270,20 @@ plugins -- 插件文件配置所在目录
 | r       | 打开最近文件                      |          | normal |
 | p       | 最近项目                          |          | normal |
 |         |                                   |          |        |
-| bg      | 选择一个buffer跳转                | Buffers  | normal |
-| bf      | 用telescope查找buffer             | Buffers  | normal |
-| bj      | 下一个buffer                      | Buffers  | normal |
-| bk      | 上一个buffer                      | Buffers  | normal |
-| bc      | 关闭buffer                        | Buffers  | normal |
-| bC      | 选择一个buffer关闭                | Buffers  | normal |
-| bh      | 关闭所有左侧的buffer              | Buffers  | normal |
-| bl      | 关闭所有右侧的buffer              | Buffers  | normal |
+| bg      | 选择一个buffer跳转                | Buffer   | normal |
+| bf      | 用telescope查找buffer             | Buffer   | normal |
+| bj      | 下一个buffer                      | Buffer   | normal |
+| bk      | 上一个buffer                      | Buffer   | normal |
+| bc      | 关闭buffer                        | Buffer   | normal |
+| bC      | 选择一个buffer关闭                | Buffer   | normal |
+| bh      | 关闭所有左侧的buffer              | Buffer   | normal |
+| bl      | 关闭所有右侧的buffer              | Buffer   | normal |
 |         |                                   |          |        |
 | gg      | 打开lazygit                       | Git      | normal |
-| gf      | file history                      | Git      | normal |
-| gj      | next hunk                         | Git      | normal |
-| gk      | prev hunk                         | Git      | normal |
-| gl      | blame line                        | Git      | normal |
-| gp      | preview hunk                      | Git      | normal |
-| gr      | reset hunk                        | Git      | normal |
-| gR      | reset buffer                      | Git      | normal |
-| gs      | stage hunk                        | Git      | normal |
-| gS      | stage buffer                      | Git      | normal |
-| gu      | undo stage hunk                   | Git      | normal |
 | go      | open changed file                 | Git      | normal |
 | gb      | checkout branch                   | Git      | normal |
 | gc      | checkout commit                   | Git      | normal |
 | gC      | checkout commit(for current file) | Git      | normal |
-| gd      | git diff                          | Git      | normal |
-| gD      | diff project                      | Git      | normal |
 |         |                                   |          |        |
 | sf      | 搜索文件                          | Search   | normal |
 | sH      | 查找帮助                          | Search   | normal |
