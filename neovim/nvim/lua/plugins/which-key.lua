@@ -80,17 +80,16 @@ return {
 
         local mappings = {
             ["a"] = { "<cmd>Alpha<cr>", "Welcome" },
-            ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
             ["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
             ["p"] = { "<cmd>Telescope projects<cr>", "Recent Projects" },
 
             b = {
                 name = "Buffer",
-                g = { "<cmd>BufferLinePick<cr>", "Go To" },
                 f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+                c = { "<cmd>Bdelete!<cr>", "Close buffer" },
+                g = { "<cmd>BufferLinePick<cr>", "Go To" },
                 j = { "<cmd>BufferLineCycleNext<cr>", "Next" },
                 k = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-                c = { "<cmd>Bdelete!<cr>", "Close buffer" },
                 C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
                 h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
                 l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
@@ -99,22 +98,10 @@ return {
             g = {
                 name = "Git",
                 g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-                f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
-                j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
-                k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
-                l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-                p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-                r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-                R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-                s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-                S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
-                u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
                 o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
                 b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
                 c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
                 C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
-                d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff" },
-                D = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
             },
 
             -- l = {
