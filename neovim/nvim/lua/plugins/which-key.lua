@@ -161,8 +161,6 @@ return {
 
             t = {
                 name = "Terminal",
-                u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-                t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
                 f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
                 h = { "<cmd>ToggleTerm direction=horizontal size=10<cr>", "Horizontal" },
                 v = { "<cmd>ToggleTerm direction=vertical size=80<cr>", "Vertical" },

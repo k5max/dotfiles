@@ -44,12 +44,12 @@ return {
         })
 
         -- 快捷键绑定
-        -- alt + m 键打开关闭tree
         local opt = {
             noremap = true,
             silent = true
         }
         vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
+        vim.keymap.set("n", "<leader>m", ":NvimTreeFindFile<CR>", opt)
 
         -- 自动关闭
         vim.cmd([[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]])

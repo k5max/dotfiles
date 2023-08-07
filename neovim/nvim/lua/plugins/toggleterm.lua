@@ -57,7 +57,8 @@ return {
 
 
         -- 为 lazygit 添加快捷键绑定
-        -- NOTE: which-key已经指定了 
-        -- vim.keymap.set("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true})
+        vim.keymap.set("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true})
+        vim.keymap.set("n", "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<CR>", {noremap = true})
+        vim.keymap.set("n", "<leader>tt", "<cmd>lua _HTOP_TOGGLE()<CR>", {noremap = true})
     end
 }
