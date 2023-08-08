@@ -34,9 +34,9 @@ return {
                     "lua_ls",
                     -- "html",
                     -- "cssls",
-                    -- "tsserver",
+                    "tsserver",
                     "pyright",
-                    -- "jdtls",
+                    "jdtls",
                 },
                 -- 是否应该自动安装
                 automatic_installation = true,
@@ -53,16 +53,16 @@ return {
             -- key 必须为下列网址列出的 server name，不可以随便写
             -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
             local servers = {
-                --ccls = require("plugin-config.lsp.server.ccls")
-                clangd = require("lsp.clangd"), --lua/lsp/config/clangd.lua
-                --cmake = require("plugin-config.lsp.server.cmake"),
-                lua_ls = require("lsp.lua"),    -- lua/lsp/config/lua.lua
-                -- html = require("plugin-config.lsp.server.html"),
-                -- cssls = require("plugin-config.lsp.server.css"),
-                -- tsserver = require("plugin-config.lsp.server.typescript"),
+                --ccls = require("lsp.ccls")
+                clangd = require("lsp.clangd"), --lua/lsp/clangd.lua
+                --cmake = require("lsp.cmake"),
+                lua_ls = require("lsp.lua"),
+                -- html = require("lsp.html"),
+                -- cssls = require("lsp.css"),
+                tsserver = require("lsp.tsserver"),
                 pyright = require("lsp.pyright"),
-                -- jdtls = require("plugin-config.lsp.server.jdtls"),
-                -- remark_ls = require("plugin-config.lsp.server.markdown"),
+                -- jdtls = require("lsp.jdtls"),
+                -- remark_ls = require("lsp.markdown"),
             }
 
             -- 开启上面指定语言的lsp设置
