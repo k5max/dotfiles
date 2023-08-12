@@ -244,7 +244,6 @@ plugins -- 插件文件配置所在目录
 | Gitsigns stage_hunk                | \<leader>hs | gitsigns.nvim | normal |
 | Gitsigns reset_hunk                | \<leader>hr | gitsigns.nvim | normal |
 | Gitsigns undo_stage_hunk           | \<leader>hu | gitsigns.nvim | normal |
-| Gitsigns prev_hunk                 | \<leader>hp | gitsigns.nvim | normal |
 | Gitsigns stage_buffer              | \<leader>hS | gitsigns.nvim | normal |
 | Gitsigns reset_buffer              | \<leader>hR | gitsigns.nvim | normal |
 | blame line                         | \<leader>hb | gitsigns.nvim | normal |

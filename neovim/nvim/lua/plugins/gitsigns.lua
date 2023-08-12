@@ -62,7 +62,6 @@ return {
                 map('n', '<leader>hk', gs.prev_hunk)
 
                 -- Actions 
-                map('n', '<leader>hp', gs.preview_hunk)
                 map('n', '<leader>hs', gs.stage_hunk)
                 map('n', '<leader>hu', gs.undo_stage_hunk)
                 map('n', '<leader>hr', gs.reset_hunk)
