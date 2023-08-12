@@ -129,22 +129,21 @@ plugins -- 插件文件配置所在目录
 | command    | keybinding | plugin     | model  |
 | ---------- | ---------- | ---------- | ------ |
 | 打开欢迎页 | \<leader>a | alpha-nvim | normal |
-| ...        |            |            |        |
 
 
 
 #### nvim-tree
 
-| command             | keybinding | plugin    | model  |
-| ------------------- | ---------- | --------- | ------ |
-| 打开/关闭侧边文件栏 | \<leader>e | nvim-tree | normal |
-| 创建文件            | a          | nvim-tree | normal |
-| 删除文件            | d          | nvim-tree | normal |
-| 重命名文件          | r          | nvim-tree | normal |
-| 复制文件            | c          | nvim-tree | normal |
-| 粘贴文件            | p          | nvim-tree | normal |
-| 剪切文件            | x          | nvim-tree | normal |
-| ...                 |            |           |        |
+| command                     | keybinding | plugin    | model  |
+| --------------------------- | ---------- | --------- | ------ |
+| 打开/关闭File Explorer      | \<leader>e | nvim-tree | normal |
+| File Explorer中定位当前文件 | \<leader>m | nvim-tree | normal |
+| 创建文件                    | a          | nvim-tree | normal |
+| 删除文件                    | d          | nvim-tree | normal |
+| 重命名文件                  | r          | nvim-tree | normal |
+| 复制文件                    | c          | nvim-tree | normal |
+| 粘贴文件                    | p          | nvim-tree | normal |
+| 剪切文件                    | x          | nvim-tree | normal |
 
 
 
@@ -153,7 +152,6 @@ plugins -- 插件文件配置所在目录
 | command       | keybinding | plugin               | model  |
 | ------------- | ---------- | -------------------- | ------ |
 | 打开/关闭大纲 | \<leader>o | symbols-outline.nvim | normal |
-| ...           |            |                      |        |
 
 
 
@@ -172,39 +170,44 @@ plugins -- 插件文件配置所在目录
 | telescope弹窗内容向上滚动 | \<C-u>      | telescope.nvim | insert |
 | telescope弹窗内容向下滚动 | \<C-d>      | telescope.nvim | insert |
 | telescope关闭弹窗         | \<esc>      | telescope.nvim | insert |
-| ......                    |             |                |        |
 
 
 
 #### toggleterm
 
-| command            | keybinding | plugin          | model    |
-| ------------------ | ---------- | --------------- | -------- |
-| 打开toggleterm终端 | <C-\\>     | toggleterm.nvim | normal   |
-| 光标跳到左边终端中 | \<C-h>     | toggleterm.nvim | terminal |
-| 光标跳到下边终端中 | \<C-j>     | toggleterm.nvim | terminal |
-| 光标跳到上边终端中 | \<C-k>     | toggleterm.nvim | terminal |
-| 光标跳到右边终端中 | \<C-l>     | toggleterm.nvim | terminal |
-| 终端进入normal模式 | \<esc>     | toggleterm.nvim | terminal |
-| ...                |            |                 |          |
+| command            | keybinding  | plugin          | model    |
+| ------------------ | ----------- | --------------- | -------- |
+| 打开toggleterm终端 | <C-\\>      | toggleterm.nvim | normal   |
+| 光标跳到左边终端中 | \<C-h>      | toggleterm.nvim | terminal |
+| 光标跳到下边终端中 | \<C-j>      | toggleterm.nvim | terminal |
+| 光标跳到上边终端中 | \<C-k>      | toggleterm.nvim | terminal |
+| 光标跳到右边终端中 | \<C-l>      | toggleterm.nvim | terminal |
+| 终端进入normal模式 | \<esc>      | toggleterm.nvim | terminal |
+| 打开Lazygit        | \<leader>gg | toggleterm.nvim | normal   |
+| 打开NCDU           | \<leader>tu | toggleterm.nvim | normal   |
+| 打开htop           | \<leader>tt | toggleterm.nvim | normal   |
 
 
 
 #### nvim-lspconfig
 
-| command                   | keybinding        | plugin         | model  |
-| ------------------------- | ----------------- | -------------- | ------ |
-| lsp.buf.declaration       | gD                | nvim-lspconfig | normal |
-| lsp.buf.definition        | gd                | nvim-lspconfig | normal |
-| lsp.buf.hover             | gh                | nvim-lspconfig | normal |
-| lsp.buffer.implementation | gi                | nvim-lspconfig | normal |
-| lsp.buffer.references     | gr                | nvim-lspconfig | normal |
-| lsp格式化                 | \<space>f         | nvim-lspconfig | normal |
-| 浮动窗口打开错误提示      | \<space>\<space>e | nvim-lspconfig | normal |
-| 跳到上一个错误            | [d                | nvim-lspconfig | normal |
-| 跳到下一个错误            | ]d                | nvim-lspconfig | normal |
-| 打开/关闭诊断错误列表     | \<space>q         | nvim-lspconfig | normal |
-| ...                       |                   |                |        |
+这些都需要先安装 lsp 服务器
+
+| command                       | keybinding        | plugin         | model  |
+| ----------------------------- | ----------------- | -------------- | ------ |
+| vim.lsp.buf.declaration       | gD                | nvim-lspconfig | normal |
+| vim.lsp.buf.definition        | gd                | nvim-lspconfig | normal |
+| vim.lsp.buf.hover             | gh                | nvim-lspconfig | normal |
+| vim.lsp.buffer.implementation | gi                | nvim-lspconfig | normal |
+| vim.lsp.buf.references        | gr                | nvim-lspconfig | normal |
+| vim.lsp.buf.type_definition   | \<leader>D        | nvim-lspconfig | normal |
+| vim.lsp.buf.rename            | \<leader>rn       | nvim-lspconfig | normal |
+| vim.lsp.buf.code_action       | \<leader>ca       | nvim-lspconfig | normal |
+| lsp格式化                     | \<leader>f        | nvim-lspconfig | normal |
+| 浮动窗口打开错误提示          | \<space>\<space>e | nvim-lspconfig | normal |
+| 跳到上一个错误                | [d                | nvim-lspconfig | normal |
+| 跳到下一个错误                | ]d                | nvim-lspconfig | normal |
+| 打开/关闭诊断错误列表         | \<space>q         | nvim-lspconfig | normal |
 
 
 
@@ -220,7 +223,6 @@ plugins -- 插件文件配置所在目录
 | ~~选中下一个补全提示信息（未使用）~~ | ~~\<Tab>~~ | ~~nvim-cmp~~ | ~~insert~~ |
 | 选中上一个补全提示信息               | \<S-Tab>   | nvim-cmp     | insert     |
 | 选中当前补全提示                     | \<CR>      | nvim-cmp     | insert     |
-| ...                                  |            |              |            |
 
 
 
@@ -230,7 +232,6 @@ plugins -- 插件文件配置所在目录
 | -------- | ---------- | ------------ | ------------- |
 | 注释单行 | gcc        | Comment.nvim | normal,visual |
 | 注释多行 | gc         | Comment.nvim | normal,visual |
-| ...      |            |              |               |
 
 
 
@@ -253,7 +254,6 @@ plugins -- 插件文件配置所在目录
 | Gitsigns toggle_deleted            | \<leader>td | gitsigns.nvim | normal |
 | Gitsigns select_hunk               | ih          | gitsigns.nvim | o      |
 | Gitsigns select_hunk               | ih          | gitsigns.nvim | x      |
-| ...                                |             |               |        |
 
 
 
@@ -295,8 +295,6 @@ which功能就是**整合命令 + 提示**。
 | sC      | Commands                          | Search   | normal |
 | sl      | Resume last search                | Search   | normal |
 |         |                                   |          |        |
-| tu      | 打开NCDU                          | Terminal | normal |
-| tt      | 打开htop                          | Terminal | normal |
 | tf      | 以浮动弹窗方式打开终端            | Terminal | normal |
 | th      | 以水平方式打开终端                | Terminal | normal |
 | tv      | 以垂直方式打开终端                | Terminal | normal |
@@ -314,7 +312,6 @@ which功能就是**整合命令 + 提示**。
 | copilot-suggest              | <M-\\>           | copilot.vim | insert  |
 | copilot-next                 | <M-]>            | copilot.vim | insert  |
 | copilot-previous             | <M-[>            | copilot.vim | insert  |
-| ...                          |                  |             |         |
 
 
 
