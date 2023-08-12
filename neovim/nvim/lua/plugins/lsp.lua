@@ -36,7 +36,6 @@ return {
                     -- "cssls",
                     "tsserver",
                     "pyright",
-                    "jdtls",
                 },
                 -- 是否应该自动安装
                 automatic_installation = true,
@@ -61,8 +60,6 @@ return {
                 -- cssls = require("lsp.css"),
                 tsserver = require("lsp.tsserver"),
                 pyright = require("lsp.pyright"),
-                -- jdtls = require("lsp.jdtls"),
-                -- remark_ls = require("lsp.markdown"),
             }
 
             -- 开启上面指定语言的lsp设置
