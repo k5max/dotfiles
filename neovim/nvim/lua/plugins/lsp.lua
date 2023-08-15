@@ -78,7 +78,7 @@ return {
             -- 快捷键相关
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            vim.keymap.set('n', '<space><sapce>e', vim.diagnostic.open_float)
+            vim.keymap.set('n', '<space>df', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
             vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
@@ -94,8 +94,8 @@ return {
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)  -- select model 的gh使用的很少，因此这里将默认的K改成了gh
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)

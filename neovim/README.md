@@ -195,8 +195,8 @@ plugins -- 插件文件配置所在目录
 
 | command                       | keybinding        | plugin         | model  |
 | ----------------------------- | ----------------- | -------------- | ------ |
-| vim.lsp.buf.declaration       | gD                | nvim-lspconfig | normal |
-| vim.lsp.buf.definition        | gd                | nvim-lspconfig | normal |
+| vim.lsp.buf.declaration       | gd                | nvim-lspconfig | normal |
+| vim.lsp.buf.definition        | gD                | nvim-lspconfig | normal |
 | vim.lsp.buf.hover             | gh                | nvim-lspconfig | normal |
 | vim.lsp.buffer.implementation | gi                | nvim-lspconfig | normal |
 | vim.lsp.buf.references        | gr                | nvim-lspconfig | normal |
@@ -204,7 +204,7 @@ plugins -- 插件文件配置所在目录
 | vim.lsp.buf.rename            | \<leader>rn       | nvim-lspconfig | normal |
 | vim.lsp.buf.code_action       | \<leader>ca       | nvim-lspconfig | normal |
 | lsp格式化                     | \<leader>f        | nvim-lspconfig | normal |
-| 浮动窗口打开错误提示          | \<space>\<space>e | nvim-lspconfig | normal |
+| 浮动窗口打开错误提示          | \<space>df        | nvim-lspconfig | normal |
 | 跳到上一个错误                | [d                | nvim-lspconfig | normal |
 | 跳到下一个错误                | ]d                | nvim-lspconfig | normal |
 | 打开/关闭诊断错误列表         | \<space>q         | nvim-lspconfig | normal |
