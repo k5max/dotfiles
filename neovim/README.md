@@ -132,6 +132,21 @@ plugins -- 插件文件配置所在目录
 
 
 
+#### bufferline
+
+| command               | keybinding  | plugin          | model  |
+| --------------------- | ----------- | --------------- | ------ |
+| 选择一个buffer跳转    | \<leader>bg | bufferline.nvim | normal |
+| 用telescope查找buffer | \<leader>bf | bufferline.nvim | normal |
+| 下一个buffer          | \<leader>bj | bufferline.nvim | normal |
+| 上一个buffer          | \<leader>bk | bufferline.nvim | normal |
+| 关闭buffer            | \<leader>bc | bufferline.nvim | normal |
+| 选择一个buffer关闭    | \<leader>bC | bufferline.nvim | normal |
+| 关闭所有左侧的buffer  | \<leader>bh | bufferline.nvim | normal |
+| 关闭所有右侧的buffer  | \<leader>bl | bufferline.nvim | normal |
+
+
+
 #### nvim-tree
 
 | command                     | keybinding | plugin    | model  |
@@ -269,16 +284,6 @@ which功能就是**整合命令 + 提示**。
 | r       | 打开最近文件                      |          | normal |
 | p       | 最近项目                          |          | normal |
 |         |                                   |          |        |
-| bg      | 选择一个buffer跳转                | Buffer   | normal |
-| bf      | 用telescope查找buffer             | Buffer   | normal |
-| bj      | 下一个buffer                      | Buffer   | normal |
-| bk      | 上一个buffer                      | Buffer   | normal |
-| bc      | 关闭buffer                        | Buffer   | normal |
-| bC      | 选择一个buffer关闭                | Buffer   | normal |
-| bh      | 关闭所有左侧的buffer              | Buffer   | normal |
-| bl      | 关闭所有右侧的buffer              | Buffer   | normal |
-|         |                                   |          |        |
-| gg      | 打开lazygit                       | Git      | normal |
 | go      | open changed file                 | Git      | normal |
 | gb      | checkout branch                   | Git      | normal |
 | gc      | checkout commit                   | Git      | normal |
