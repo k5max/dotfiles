@@ -33,19 +33,19 @@ return {
             },
         })
 
-        -- -- bufferline 快捷键映射 已被which-key接管
-        -- local opt = {
-        --     noremap = true,
-        --     silent = true
-        -- }
-        -- -- 左右jk切换
-        -- vim.keymap.set("n", "<leader>bj", ":BufferLineCyclePrev<CR>", opt)
-        -- vim.keymap.set("n", "<leader>bk", ":BufferLineCycleNext<CR>", opt)
-        -- -- 关闭 使用"moll/vim-bbye"
-        -- vim.keymap.set("n", "<leader>bc", ":Bdelete!<CR>", opt)
-        -- vim.keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-        -- vim.keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-        -- vim.keymap.set("n", "<leader>bC", ":BufferLinePickClose<CR>", opt)
+        local opt = {
+            noremap = true,
+            silent = true
+        }
+        vim.keymap.set("n", "<leader>bf", "<cmd>Telescope buffers previewer=false<cr>", opt)
+        -- 关闭 使用"moll/vim-bbye"
+        vim.keymap.set("n", "<leader>bc", "<cmd>Bdelete!<cr>", opt)
+        vim.keymap.set("n", "<leader>bg", "<cmd>BufferLinePick<cr>", opt)
+        vim.keymap.set("n", "<leader>bj", "<cmd>BufferLineCyclePrev<cr>", opt)
+        vim.keymap.set("n", "<leader>bk", "<cmd>BufferLineCycleNext<cr>", opt)
+        vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", opt)
+        vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", opt)
+        vim.keymap.set("n", "<leader>bC", "<cmd>BufferLinePickClose<cr>", opt)
 
     end
 }

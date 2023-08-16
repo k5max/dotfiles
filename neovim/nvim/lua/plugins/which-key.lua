@@ -83,18 +83,6 @@ return {
             ["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
             ["p"] = { "<cmd>Telescope projects<cr>", "Recent Projects" },
 
-            b = {
-                name = "Buffer",
-                f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-                c = { "<cmd>Bdelete!<cr>", "Close buffer" },
-                g = { "<cmd>BufferLinePick<cr>", "Go To" },
-                j = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-                k = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-                C = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
-                h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-                l = { "<cmd>BufferLineCloseRight<cr>", "Close all to the right" },
-            },
-
             g = {
                 name = "Git",
                 g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
