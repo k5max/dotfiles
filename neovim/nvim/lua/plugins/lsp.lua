@@ -3,7 +3,6 @@ return {
         -- installer
         "williamboman/mason.nvim",
         config = function()
-
             -- mason 和 mason-lspconfig 负责安装和管理 LSP 服务器
             local mason = require("mason")
             -- :h mason-default-settings
@@ -94,8 +93,8 @@ return {
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.definition, opts)
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)  -- select model 的gh使用的很少，因此这里将默认的K改成了gh
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)

@@ -13,7 +13,8 @@ nvim
     ├── lsp
     │   ├── clangd.lua
     │   ├── lua.lua
-    │   └── pyright.lua
+    │   ├── pyright.lua
+    │   └── tsserver.lua
     └── plugins
         ├── alpha.lua
         ├── bufferline.lua
@@ -28,6 +29,7 @@ nvim
         ├── lsp.lua
         ├── lualine.lua
         ├── nvim-autopairs.lua
+        ├── nvim-surround.lua
         ├── nvim-tree.lua
         ├── nvim-treesitter.lua
         ├── project.lua
@@ -210,8 +212,8 @@ plugins -- 插件文件配置所在目录
 
 | command                       | keybinding        | plugin         | model  |
 | ----------------------------- | ----------------- | -------------- | ------ |
-| vim.lsp.buf.declaration       | gd                | nvim-lspconfig | normal |
-| vim.lsp.buf.definition        | gD                | nvim-lspconfig | normal |
+| vim.lsp.buf.declaration       | gD                | nvim-lspconfig | normal |
+| vim.lsp.buf.definition        | gd                | nvim-lspconfig | normal |
 | vim.lsp.buf.hover             | gh                | nvim-lspconfig | normal |
 | vim.lsp.buffer.implementation | gi                | nvim-lspconfig | normal |
 | vim.lsp.buf.references        | gr                | nvim-lspconfig | normal |

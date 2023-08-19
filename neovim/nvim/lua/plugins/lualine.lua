@@ -8,7 +8,10 @@ return {
         lualine.setup {
             options = {
                 icons_enabled = true,
-                theme = 'sonokai',
+                -- All available themes are listed in https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
+                -- auto is a special theme. It will automatically load theme for your colorscheme.
+                -- If there's no theme available for your colorscheme then it'll try it's best to generate one.
+                theme = 'auto',
                 component_separators = { left = '|', right = '|'},
                 section_separators = { left = '', right = ''},
                 disabled_filetypes = {

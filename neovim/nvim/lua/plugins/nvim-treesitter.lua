@@ -1,7 +1,7 @@
 return {
     -- treesitter + nvim-ts-rainbow => 语法高亮 + 不同括号颜色区分
     "nvim-treesitter/nvim-treesitter",
-    dependencies = { "p00f/nvim-ts-rainbow" },
+    -- dependencies = { "p00f/nvim-ts-rainbow" },
     build = ":TSUpdate",
     config = function()
         local treesitter = require("nvim-treesitter.configs")
@@ -9,6 +9,16 @@ return {
             -- 安装 language parser
             -- :tsinstallinfo 命令查看支持的语言
             ensure_installed = {"c", "cpp", "rust", "java", "kotlin", "python", "go", "javascript", "typescript", "html", "css", "sql", "lua", "vim", "json", "markdown"},
+
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = true,
+
+            -- Automatically install missing parsers when entering buffer
+            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+            auto_install = true,
+
+            -- List of parsers to ignore installing (for "all")
+            ignore_install = {},
 
             -- 启用代码高亮模块
             highlight = {
